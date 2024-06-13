@@ -29,6 +29,7 @@ export function QuoteGenerator() {
 
   const handleClick = () => {
     getData();
+    // add comment
   };
 
   return (
