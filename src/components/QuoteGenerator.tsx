@@ -1,26 +1,22 @@
 import { useEffect, useState } from "react";
+import { fetchData } from "./fetchData";
 
 interface QuoteAPI {
-  _id: string;
   content: string;
   author: string;
-  tags: string[];
-  authorSlug: string;
-  length: number;
-  dateAdded: string;
-  dateModified: string;
 }
 
 export function QuoteGenerator() {
-  const [author, setAuthor] = useState("");
-  const [quote, setQuote] = useState("");
+  const [author, setAuthor] = useState<string>("");
+  const [quote, setQuote] = useState<string>("");
 
   useEffect(() => {
     getData();
   }, []);
 
   const getData = async () => {
-    const data = await fetchData();
+    const url = "https://api.quotable.io/random";
+    const data: QuoteAPI = await fetchData(url);
     const fetchedAuthor: string = data.author;
     const fetchedContent: string = data.content;
     setAuthor(fetchedAuthor);
@@ -29,20 +25,13 @@ export function QuoteGenerator() {
 
   const handleClick = () => {
     getData();
-    // add comment
   };
 
   return (
-    <div>
+    <section>
       <p>{quote}</p>
       <p>{author}</p>
       <button onClick={handleClick}>Button</button>
-    </div>
+    </section>
   );
-}
-
-export async function fetchData() {
-  const response = await fetch("https://api.quotable.io/random");
-  const data: QuoteAPI = await response.json();
-  return data;
 }
