@@ -1,3 +1,4 @@
+import { MoreButton } from "./components/MoreButton";
 import { QuoteGenerator } from "./components/QuoteGenerator";
 import { ShowTime } from "./components/ShowTime";
 
@@ -6,6 +7,7 @@ function App() {
     <>
       <QuoteGenerator />
       <ShowTime />
+      <MoreButton />
     </>
   );
 }

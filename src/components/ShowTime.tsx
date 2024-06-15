@@ -165,6 +165,9 @@ export function ShowTime() {
 // }
 
 // https://api.ipbase.com/v2/info?apikey=ipb_live_StnSCmSs93H7SaeCHqhBTADSrqxyMD66BLqb8RGe
+
+// const key = 244ebdbb-afe3-48e6-984e-6085bce18489
+// const url = https://apiip.net/api/check?accessKey=
 // const getData = async () => {
 //     const url =
 //       "https://api.ipbase.com/v2/info?apikey=ipb_live_StnSCmSs93H7SaeCHqhBTADSrqxyMD66BLqb8RGe";
