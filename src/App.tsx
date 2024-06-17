@@ -5,8 +5,10 @@ import { MoreButton } from "./components/MoreButton";
 function App() {
   return (
     <>
-      <QuoteGenerator />
-      <ShowTime />
+      <section id="main">
+        <QuoteGenerator />
+        <ShowTime />
+      </section>
       <MoreButton />
     </>
   );
