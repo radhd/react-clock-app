@@ -29,9 +29,15 @@ export function QuoteGenerator() {
 
   return (
     <section>
-      <p>{quote}</p>
-      <p>{author}</p>
-      <button onClick={handleClick}>Button</button>
+      <div className="font-inter flex px-7 py-10 text-white">
+        <div>
+          <p className="mb-2 text-sm">"{quote}"</p>
+          <p className="font-semiBold">{author}</p>
+        </div>
+        <div>
+          <button onClick={handleClick}>Button</button>
+        </div>
+      </div>
     </section>
   );
 }

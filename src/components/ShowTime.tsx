@@ -82,7 +82,6 @@ export function ShowTime() {
           IN {capital}, {countryCode}
         </p>
       </div>
-      
     </>
   );
 }
