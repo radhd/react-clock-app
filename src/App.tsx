@@ -5,7 +5,7 @@ import dayImage from "./components/assets/mobile/bg-image-daytime.jpg";
 
 function App() {
   return (
-    <main>
+    <main className="font-inter">
       <div
         className="h-screen bg-black/30 bg-cover bg-top bg-blend-overlay"
         style={{

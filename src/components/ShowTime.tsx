@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { fetchData } from "./fetchData";
 import { MoreButton } from "./MoreButton";
+import moonIcon from "./assets/desktop/icon-moon.svg";
+import sunIcon from "./assets/desktop/icon-sun.svg";
 
 interface ShowTimeApi {
   ip: "46.49.47.202";
@@ -32,11 +34,10 @@ export function ShowTime() {
   const [countryCode, setCountryCode] = useState<string>("Unknown");
   const [border, SetBorder] = useState<string>("Unknown");
 
-  setInterval(() => time, 60000);
+  setInterval(() => setTime(getCurrentTime()), 1000);
 
   useEffect(() => {
     setIsNight(isEvening());
-    setTime(getCurrentTime());
     const fetchData = async () => {
       const result = await getData();
       setCapital(result.capital);
@@ -58,7 +59,6 @@ export function ShowTime() {
       hour: "2-digit",
       minute: "2-digit",
       hour12: false,
-      timeZoneName: "short",
     };
     return new Intl.DateTimeFormat("en-GB", options).format(date);
   };
@@ -71,14 +71,20 @@ export function ShowTime() {
 
   return (
     <>
-      <div>
+      <div className="px-6 text-white">
         {isNight ? (
-          <p>GOOD EVENING, IT'S CURRENTLY</p>
+          <div className="flex gap-4">
+            <img src={moonIcon} alt="" />
+            <span className="tracking-[3px]">GOOD EVENING</span>
+          </div>
         ) : (
-          <p>GOOD MORNING, IT'S CURRENTLY</p>
+          <div>
+            <img src={sunIcon} alt="" />
+            <span>GOOD MORNING</span>
+          </div>
         )}
-        <p>{time}</p>
-        <p>
+        <p className="text-[5rem] tracking-tighter">{time}</p>
+        <p className="-mt-5">
           IN {capital}, {countryCode}
         </p>
       </div>
