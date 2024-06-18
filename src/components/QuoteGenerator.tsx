@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchData } from "./fetchData";
+import iconRefresh from "./assets/desktop/icon-refresh.svg";
 
 interface QuoteAPI {
   content: string;
@@ -31,11 +32,15 @@ export function QuoteGenerator() {
     <section>
       <div className="font-inter flex px-7 py-10 text-white">
         <div>
-          <p className="mb-2 text-sm">"{quote}"</p>
+          <p className="mb-2 text-sm text-[#D8D8D8]">"{quote}"</p>
           <p className="font-semiBold">{author}</p>
         </div>
         <div>
-          <button onClick={handleClick}>Button</button>
+          <button onClick={handleClick}>
+            <div className="ms-3 w-12">
+              <img src={iconRefresh} alt="" />
+            </div>
+          </button>
         </div>
       </div>
     </section>
