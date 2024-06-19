@@ -7,14 +7,16 @@ function App() {
   return (
     <main className="font-inter">
       <div
-        className="h-screen bg-black/30 bg-cover bg-top bg-blend-overlay"
+        className="flex min-h-[667px] flex-col justify-between bg-black/30 bg-cover bg-top bg-blend-overlay"
         style={{
           backgroundImage: `url(${dayImage})`,
         }}
       >
         <QuoteGenerator />
-        <ShowTime />
-        <MoreButton />
+        <div className="mb-10">
+          <ShowTime />
+          <MoreButton />
+        </div>
       </div>
     </main>
   );

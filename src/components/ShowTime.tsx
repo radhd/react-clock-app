@@ -70,17 +70,17 @@ export function ShowTime() {
   };
 
   return (
-    <>
+    <section>
       <div className="px-6 text-white">
         {isNight ? (
-          <div className="flex gap-4">
+          <div className="flex items-center gap-4">
             <img src={moonIcon} alt="" />
-            <span className="tracking-[3px]">GOOD EVENING</span>
+            <span className="tracking-[3px]">GOOD EVENING, IT'S CURRENTLY</span>
           </div>
         ) : (
-          <div>
+          <div className="flex items-center gap-4">
             <img src={sunIcon} alt="" />
-            <span>GOOD MORNING</span>
+            <span>GOOD MORNING, IT'S CURRENTLY</span>
           </div>
         )}
         <p className="text-[5rem] tracking-tighter">{time}</p>
@@ -88,7 +88,7 @@ export function ShowTime() {
           IN {capital}, {countryCode}
         </p>
       </div>
-    </>
+    </section>
   );
 }
 
