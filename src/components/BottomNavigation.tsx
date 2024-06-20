@@ -58,12 +58,24 @@ export function BottomNavigation(props: Props) {
     <>
       {isOpen ? (
         <div
-          className={`w-full overflow-hidden bg-blue-500 p-4 text-white transition-all duration-300 ${isOpen ? "min-h-64" : ""}`}
+          className={`w-full overflow-hidden bg-white/75 px-7 py-12 text-xs text-[#303030] transition-all duration-300 ${isOpen ? "min-h-64" : ""}`}
         >
-          <p>current timezone: {currentTimezone(now)}</p>
-          <p>day of the year: {getDayOfYear(now)}</p>
-          <p>day of the week: {getWeekNumber(now)}</p>
-          <p>week number: {getDayOfWeek(now)}</p>
+          <div className="betwee flex items-center justify-between">
+            <p>current timezone: </p>
+            <p className="text-xl font-bold">{currentTimezone(now)}</p>
+          </div>
+          <div className="betwee flex items-center justify-between">
+            <p>day of the year: </p>
+            <p className="text-xl font-bold">{getDayOfYear(now)}</p>
+          </div>
+          <div className="betwee flex items-center justify-between">
+            <p>day of the week: </p>
+            <p className="text-xl font-bold">{getWeekNumber(now)}</p>
+          </div>
+          <div className="betwee flex items-center justify-between">
+            <p>week number: </p>
+            <p className="text-xl font-bold">{getDayOfWeek(now)}</p>
+          </div>
         </div>
       ) : null}
     </>
