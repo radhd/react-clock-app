@@ -13,10 +13,11 @@ export function MoreButton() {
     <div className="px-6">
       <button
         onClick={onClick}
-        className="font relative h-10 w-28 rounded-full bg-white"
+        className="font relative mt-12 h-10 w-28 rounded-full bg-white pe-5 tracking-widest text-slate-500"
       >
-        {/* <img className="rounded-full bg-black" src={arrowIconDown} alt="" /> */}
-        <div className="absolute h-8 w-8 rounded-full bg-[#303030]"></div>
+        <div className="absolute right-1 top-1 flex h-8 w-8 items-center justify-center rounded-full bg-[#303030]">
+          <img className="top-3 rounded-full" src={arrowIconDown} alt="" />
+        </div>
         More
       </button>
       <BottomNavigation isOpen={isOpen} />
