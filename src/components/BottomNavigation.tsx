@@ -58,7 +58,7 @@ export function BottomNavigation(props: Props) {
     <>
       {isOpen ? (
         <div
-          className={`fixed bottom-0 left-0 z-10 w-full overflow-hidden bg-blue-500 p-4 text-white transition-all duration-300 ${isOpen ? "ms-5 min-h-64" : ""}`}
+          className={`w-full overflow-hidden bg-blue-500 p-4 text-white transition-all duration-300 ${isOpen ? "min-h-64" : ""}`}
         >
           <p>current timezone: {currentTimezone(now)}</p>
           <p>day of the year: {getDayOfYear(now)}</p>

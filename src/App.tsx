@@ -13,7 +13,7 @@ function App() {
         }}
       >
         <QuoteGenerator />
-        <div className="mb-10">
+        <div>
           <ShowTime />
           <MoreButton />
         </div>
